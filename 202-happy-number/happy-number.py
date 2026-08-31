@@ -2,17 +2,15 @@ class Solution:
     def isHappy(self, n: int) -> bool:
 
         seen = set()
-        curr = str(n)
+        cur = str(n)
 
-        while curr not in seen:
-            seen.add(curr)
+        while cur not in seen:
+            seen.add(cur)
             summ = 0
-            for i in curr:
-                i = int(i)
-                summ+= i * i 
+            for dig in cur:
+                dig = int(dig)
+                summ += dig*dig
             if summ == 1:
                 return True
-            curr = str(summ)
-
-        return False         
-
+            cur = str(summ)
+        return False
