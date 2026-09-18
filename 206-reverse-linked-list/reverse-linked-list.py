@@ -10,9 +10,10 @@ class Solution:
         curr = head
 
         while curr:
-            temp = curr.next
+            nextN = curr.next
             curr.next = prev
             prev = curr
-            curr = temp 
+            curr = nextN
 
         return prev
+             
