@@ -1,15 +1,9 @@
 class Solution:
     def plusOne(self, digits: list[int]) -> list[int]:
 
-        add = ""
-        res=[]
-        for i in digits:
-            add+=str(i)
-        add = int(add)
-        summ=add+1
-        for dig in str(summ):
-            sin = int(dig)
-            res.append(sin)
-        return res
-
-
+        for i in range(len(digits)-1,-1,-1):
+            if digits[i]<9:
+                digits[i]+=1
+                return digits  
+            digits[i] =0
+        return [1] + digits
