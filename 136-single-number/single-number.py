@@ -2,10 +2,13 @@ class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         
         
-        mp = {}
+        l = 0
+        r = 1
 
-        for i in nums:
-            mp[i] = mp.get(i,0)+1
-        for num,val in mp.items():
-            if val == 1:
-                return num
+        while r<len(nums):
+            if nums[l] == nums[r]:
+                l+=1
+                nums.pop(r)
+                r=l
+            r+=1
+        return nums[l]
