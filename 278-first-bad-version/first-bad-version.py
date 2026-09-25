@@ -6,9 +6,9 @@ class Solution:
         
         l = 0
         r = n
-        mid = l+(r-l)//2
+        mid = (l+r)//2
         while l<r:
-            mid = l+(r-l)//2
+            mid = (l+r)//2
             if isBadVersion(mid):
                 r=mid
             else:
