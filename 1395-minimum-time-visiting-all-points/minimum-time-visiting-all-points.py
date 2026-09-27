@@ -3,11 +3,11 @@ class Solution:
         res=0
         for i in range(len(points)-1):
             x1 = points[i][0]
-            x2 = points[i][1]
-            y1 = points[i+1][0]
+            y1 = points[i][1]
+            x2 = points[i+1][0]
             y2 = points[i+1][1]
 
-            dis = max(abs(x1-y1),abs(x2-y2))
+            dis = max(abs(x1-x2),abs(y1-y2))
 
             res+=dis
         return res
