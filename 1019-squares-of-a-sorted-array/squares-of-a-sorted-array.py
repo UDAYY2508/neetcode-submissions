@@ -1,5 +1,11 @@
 class Solution:
     def sortedSquares(self, nums: list[int]) -> list[int]:
+        if not nums:
+            return nums
+        
+        if nums[0]>0:
+            return [num**2 for num in nums]
+
         res=[0]*len(nums)
         l=0
         r=len(nums)-1
