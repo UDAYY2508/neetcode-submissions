@@ -2,12 +2,24 @@ class Solution:
     def majorityElement(self, nums: list[int]) -> list[int]:
         
         n = len(nums)
+        nums.sort()
         chk = n//3
-        op =[]
-        mp = {}
+        count =0 
+        op=[]
+        prev=nums[0]
         for i in nums:
-            mp[i]=mp.get(i,0)+1
-        for num,val in mp.items():
-            if val>chk:
-                op.append(num)
+            if i != prev:
+                if chk<count:
+                    op.append(prev)
+                count=1
+            else:
+                count+=1
+
+            prev=i
+        if chk < count:
+            op.append(prev)
         return op
+            
+                 
+
+
