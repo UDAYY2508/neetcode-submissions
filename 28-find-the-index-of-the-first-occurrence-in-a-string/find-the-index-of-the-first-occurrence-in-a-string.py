@@ -1,7 +1,9 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         
-
+        if len(haystack)<len(needle) or len(haystack)==0:
+            return -1
+    
         l=0
         r=len(needle)
 
