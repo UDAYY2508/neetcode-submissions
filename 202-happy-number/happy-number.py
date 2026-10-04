@@ -1,17 +1,19 @@
 class Solution:
     def isHappy(self, n: int) -> bool:
+
         if n == 1:
             return True
-        summ=n
-        seen = set()
-        while summ !=1:
-            summ = str(summ)
-            total =0 
-            for i in summ:
-                total+=int(i)**2
-                summ = total
+        
+        seen=set()
+        while n!=1 and n not in seen:
+            seen.add(n)
+            summ=0
+            for i in str(n):
+                summ+=int(i)**2 
             if summ == 1:
                 return True
-            elif summ in seen:
-                return False
-            seen.add(summ)
+
+            n=summ
+        return False
+            
+            
