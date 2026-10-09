@@ -2,14 +2,12 @@ class Solution:
     def subarraysDivByK(self, nums: list[int], k: int) -> int:
         
         mp={0:1}
-        pre=0
-        res=0
+        p=0
+        c=0
         for i in nums:
-            pre+=i
-            rem = pre%k
+            p+=i
+            rem = p%k
             if rem in mp:
-                res+=mp[rem]
-            mp[rem] = mp.get(rem,0)+1
-
-        return res
-        
+                c+=mp[rem]    
+            mp[rem]=mp.get(rem,0)+1            
+        return c
